@@ -16,4 +16,13 @@ class SimCreditoController extends Controller
         return response()->json($dados);
     }
 
+    // funcao da rota convenios
+    public function convenios()
+    {
+        $convenios = file_get_contents(resource_path('json/convenios.json'));
+        $dados = json_decode($convenios, true);
+
+        return response()->json($dados);
+    }
+
 }
